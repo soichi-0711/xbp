@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>そーいちのpythonゲーム</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>pythonゲーム作成</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <!-- ①↓に文字を書いてみよう -->
+<b><p style="font-size: 40px;">ゲーム作成</p></b><br>
+<b><p style="font-size: 20px;">ゲーム内容</p></b><br>
+私は今回嘘見抜きゲーム<b>ダウト</b>を作成しました。
+
+<b><p style="font-size: 20px;">ソースコード</p></b><br>
+
+<code>
+<ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+<li style="background-color:#EFF;">print("ダウト(嘘見抜きゲーム)へようこそ")</li>
+<li style="background-color:#EEF;">name=input("名前を入れてください:")</li>
+<li style="background-color:#EFF;">print(name,"は回答者です、嘘か本当か見抜いてください。")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">while True:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("1問目")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("金平糖のいぼの数はすべて同じである（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="嘘":</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">while True:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("2問目")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("コーラは昔風邪薬として売られていた（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="本当":</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">while True:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("3問目")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("頑張ればペンギンは飛べるやつがいる（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="嘘":</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">while True:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("4問目")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("カメは尻尾で呼吸できる（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="本当":</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">while True:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("5問目")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("エッフェル塔は東京タワーより高い（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="本当":</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">while True:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("6問目")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("太陽は黄色く見えるが実は白い（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="本当":</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">while True:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("7問目")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("五円玉の穴は完ぺきに中心にある（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="嘘":</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">while True:</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print("8問目")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;a=input("蚊は人間の血液型を匂いで判別して好みを決める（回答は嘘or本当のどちらかを打ち込んでください）")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;if a=="本当":</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("不正解,、もう一度")</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue</li>
+<li style="background-color:#EEF;">print("おめでとう、全問正解だ、「https://youtu.be/EHw005ZqCXk?si=VvyI5VHUYH67wTPH」")</li>
+</ol></code>
+
+<b><p style="font-size: 20px;">まとめ</p></b><br>
+内容は最初の問題さえ作れば後は内容を変えるだけで簡単だった<br>
+しかし最初のコードでエラーが出まくり何がダメなのか探すのがとても大変だった<br>
+いつもやっているようなゲームはとんでもないコードになるのだろうなとすごいと思いつつ恐ろしく感じた<br>
+今回は単純作業の繰り返しだったので機会があれば先輩が作っていたようなストーリーゲームも作ってみたい。
+
+<b><p style="font-size: 20px;">使用・わからなかったコードまとめ</p></b><br>
+1:<b>while True</b> =while文は指定した条件が満たされている間、コード内の処理を繰り返す、ループを終わらせるためにはif文などでbreakを文を呼び出し脱出させる<br><br>
+2:<b>else</b>=if文で条件が満たされなかった場合に実行する処理を指定するために使う<br><br>
+3:<b>continue</b>=残りの処理ループ処理を飛ばして次の反復(次のループ開始)へ移る命令、if文で使うと繰り返しにはならないので注意<br><br>
+4:<b>break</b>=forやwhileといった今行っているループを終了させるコード、このゲームだと正しい答えを選べば次の問題へ行けるようになっている
