@@ -1,7 +1,15 @@
-a=44
-name="aaa"
-waist=55
-age=44
-#printは出力の命令
-print(name, "さんは腹囲", waist, "cmで年齢は",age, "才ですね。")
+from openai import OpenAI
 
+#APIを使うkeyを入力します。これは絶対にwebページなどで公開してはいけません。
+client = OpenAI(api_key=)
+
+question = input("AIに聞きたいことを入れてね：")
+
+#ここがAPIです----------------------------
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": question}]
+)
+#---------------------------------------
+
+print("AIの答え：", response.choices[0].message.content)
