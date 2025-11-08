@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>そーいちのAIサイト</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>AI活用アプリ作成</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <!-- ①↓に文字を書いてみよう -->
+<b><p style="font-size: 40px;">アプリ作成</p></b><br>
+<b><p style="font-size: 20px;">アプの内容</p></b><br>
+今回私はAIを活用してその人に合ったアニメを検索するアプリ<br>
+<b>AIアニメ診断</b>を作成しました。<br>
+おすすめのアニメとおすすめ理由を表示します。<br>
+
+<b><p style="font-size: 20px;">ソースコード</p></b><br>
+<code>
+<ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+<li style="background-color:#EFF;">from openai import OpenAI</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">print("いまのあなたにおすすめのアニメを診断するサイトです")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">#APIを使うkeyを入力します。これは絶対にwebページなどで公開してはいけません。</li>
+<li style="background-color:#EEF;">client = OpenAI(api_key="キー入力")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">#ユーザーにする質問</li>
+<li style="background-color:#EFF;">a=input("今の気分を入力")</li>
+<li style="background-color:#EEF;">b=input("今なりたい気分")</li>
+<li style="background-color:#EFF;">c=input("今見たいジャンルを入力")</li>
+<li style="background-color:#EEF;">d=input("最近ハマっていること、ものを入力")</li>
+<li style="background-color:#EFF;">e=input("興味のあること、ものを入力")</li>
+<li style="background-color:#EEF;">f=input("どのくらいの時間で見終えたいか（何分、何クール）入力")</li>
+<li style="background-color:#EFF;">g=input("一番アニメに求めている要素を入力")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">#AIにする質問（prompt）</li>
+<li style="background-color:#EFF;">question = f"""</li>
+<li style="background-color:#EEF;">今の気分：{a}</li>
+<li style="background-color:#EFF;">なりたい気分：{b}</li>
+<li style="background-color:#EEF;">見たいジャンル：{c}</li>
+<li style="background-color:#EFF;">最近ハマっていること：{d}</li>
+<li style="background-color:#EEF;">興味のあること：{e}</li>
+<li style="background-color:#EFF;">希望の視聴時間：{f}</li>
+<li style="background-color:#EEF;">アニメに求めている要素：{g}</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;">これらに合うアニメをおすすめしてください。</li>
+<li style="background-color:#EFF;">それぞれに簡単な理由も書いてください。</li>
+<li style="background-color:#EEF;">"""</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">response = client.chat.completions.create(</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;model="gpt-4o-mini",</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;#AIに与える役割</li>
+<li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;messages=[ {"role": "system", "content": "あなたはアニメに詳しいユーザー嗜好分析AIです。ユーザーの気分や好みからアニメを提案してください"},</li>
+<li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"role": "user", "content": question}]</li>
+<li style="background-color:#EEF;">)</li>
+<li style="background-color:#EFF;">#---------------------------------------</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">print("AIの答え：", response.choices[0].message.content)#AIの診断結果でおすすめアニメ表示</li>
+<li style="background-color:#EEF;"></li>
+</ol></code>
+
+<b><p style="font-size: 20px;">まとめ</p></b><br>
+授業時に使ったコードも併用し作成した、パソコンの調子が悪く作成し動かすことはできなかったです。申し訳ありません。<br>
+GPTには質問を分かりやすくまとめるf"""コードなどを聞き作成した。<br>
+質問を細かく設定することでAIの返答の精度も上がったため質問の項目を増やしたりした。<br>
+私自身最近アニメにハマっているので面白いものが作れて満足です。
+
