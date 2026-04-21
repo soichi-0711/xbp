@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>そーいちのテストページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>第二回　arduinoの基本</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <!-- ①↓に文字を書いてみよう -->
+<b><p style="font-size: 40px;">モーターを活用した創作</p></b>
+         
+<p style="font-size: 20px;">今回はarduinoとモーターを活用して簡易エレベーターのシステムを作りました</p>
+<img src="./images/20260420_145059.jpg" width="50%" alt="参考画像" >
+<img src="./images/20260420_145103.jpg" width="30%" alt="参考画像" ><br><br>
+
+<b><p style="font-size: 20px;">ソースコード</p></b><br>
+const int DIR  = 8;<br>
+const int STEP = 9;<br><br>
+
+const int LIGHT_SENSOR = A0; // 光センサー追加<br><br>
+
+const int STEPS_PER_REV = 200;<br><br>
+
+// 速度の範囲（調整ポイント）<br>
+int minDelay = 300;   // 明るいとき（速い）<br>
+int maxDelay = 2000;  // 暗いとき（遅い）<br><br>
+
+void setup() {<br>
+  pinMode(DIR, OUTPUT);<br>
+  pinMode(STEP, OUTPUT);<br>
+  Serial.begin(9600);<br>
+}<br><br>
+
+void loop() {<br><br>
+
+  // ★ 常に明るさを読む（回ってなくても更新）<br>
+  int lightValue = analogRead(LIGHT_SENSOR);<br><br>
+
+  // ★ 明るさ → 速度に変換<br>
+  int speedDelay = map(lightValue, 0, 1023, minDelay, maxDelay);<br><br>
+
+  // デバッグ（任意）<br>
+  Serial.print("Light:");<br>
+  Serial.print(lightValue);<br>
+  Serial.print(" Speed:");<br>
+  Serial.println(speedDelay);<br><br>
+
+  // ★ 回転の命令は今まで通り<br>
+  if (Serial.available() > 0) {<br>
+    int input = Serial.parseInt();<br><br>
+
+    if (input == 2) {<br>
+      moveMotor(5 * STEPS_PER_REV, true, speedDelay);<br>
+    }<br>
+    else if (input == 3) {<br>
+      moveMotor(10 * STEPS_PER_REV, true, speedDelay);<br>
+    }<br>
+    else if (input == -2) {<br>
+      moveMotor(5 * STEPS_PER_REV, false, speedDelay);<br>
+    }<br>
+    else if (input == -1) {<br>
+      moveMotor(10 * STEPS_PER_REV, false, speedDelay);<br>
+    }<br>
+  }<br>
+}<br><br>
+
+// ★ speedDelay を追加<br>
+void moveMotor(int steps, bool clockwise, int speedDelay) {<br>
+  digitalWrite(DIR, clockwise ? HIGH : LOW);<br><br>
+
+  for (int i = 0; i < steps; i++) {<br>
+    digitalWrite(STEP, HIGH);<br>
+    delayMicroseconds(speedDelay);<br>
+    digitalWrite(STEP, LOW);<br>
+    delayMicroseconds(speedDelay);<br>
+  }<br>
+}<br><br><br>
+2、3は階層を表すボタンと同じ役割で、-1,-2もマイナスが下に行くボタンと同じ役割で設定しています。
+5回転で一階上がる十回転だと二階分上がるという設定です。<br><br>
+
+<b><p style="font-size: 20px;">実際に動かす</p></b><br>
+<div class="video">https://youtube.com/shorts/2a3LB6v-CWs?feature=share</div><br>
+埋め込みリンク入手できず
