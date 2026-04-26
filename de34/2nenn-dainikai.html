@@ -18,69 +18,70 @@
 <img src="./images/20260420_145103.jpg" width="30%" alt="参考画像" ><br><br>
 
 <b><p style="font-size: 20px;">ソースコード</p></b><br>
-const int DIR  = 8;<br>
-const int STEP = 9;<br><br>
+<pre>
+const int DIR  = 8;
+const int STEP = 9;
 
-const int LIGHT_SENSOR = A0; // 光センサー追加<br><br>
+const int LIGHT_SENSOR = A0; // 光センサー追加
 
-const int STEPS_PER_REV = 200;<br><br>
+const int STEPS_PER_REV = 200;
 
-// 速度の範囲（調整ポイント）<br>
-int minDelay = 300;   // 明るいとき（速い）<br>
-int maxDelay = 2000;  // 暗いとき（遅い）<br><br>
+// 速度の範囲（調整ポイント）
+int minDelay = 300;   // 明るいとき（速い）
+int maxDelay = 2000;  // 暗いとき（遅い）
 
-void setup() {<br>
-  pinMode(DIR, OUTPUT);<br>
-  pinMode(STEP, OUTPUT);<br>
-  Serial.begin(9600);<br>
-}<br><br>
+void setup() {
+  pinMode(DIR, OUTPUT);
+  pinMode(STEP, OUTPUT);
+  Serial.begin(9600);
+}
 
-void loop() {<br><br>
+void loop() {
 
-  // ★ 常に明るさを読む（回ってなくても更新）<br>
-  int lightValue = analogRead(LIGHT_SENSOR);<br><br>
+  // ★ 常に明るさを読む（回ってなくても更新）
+  int lightValue = analogRead(LIGHT_SENSOR);
 
-  // ★ 明るさ → 速度に変換<br>
-  int speedDelay = map(lightValue, 0, 1023, minDelay, maxDelay);<br><br>
+  // ★ 明るさ → 速度に変換
+  int speedDelay = map(lightValue, 0, 1023, minDelay, maxDelay);
 
-  // デバッグ（任意）<br>
-  Serial.print("Light:");<br>
-  Serial.print(lightValue);<br>
-  Serial.print(" Speed:");<br>
-  Serial.println(speedDelay);<br><br>
+  // デバッグ（任意）
+  Serial.print("Light:");
+  Serial.print(lightValue);
+  Serial.print(" Speed:");
+  Serial.println(speedDelay);
 
-  // ★ 回転の命令は今まで通り<br>
-  if (Serial.available() > 0) {<br>
-    int input = Serial.parseInt();<br><br>
+  // ★ 回転の命令は今まで通り
+  if (Serial.available() > 0) {
+    int input = Serial.parseInt();
 
-    if (input == 2) {<br>
-      moveMotor(5 * STEPS_PER_REV, true, speedDelay);<br>
-    }<br>
-    else if (input == 3) {<br>
-      moveMotor(10 * STEPS_PER_REV, true, speedDelay);<br>
-    }<br>
-    else if (input == -2) {<br>
-      moveMotor(5 * STEPS_PER_REV, false, speedDelay);<br>
-    }<br>
-    else if (input == -1) {<br>
-      moveMotor(10 * STEPS_PER_REV, false, speedDelay);<br>
-    }<br>
-  }<br>
-}<br><br>
+    if (input == 2) {
+      moveMotor(5 * STEPS_PER_REV, true, speedDelay);
+    }
+    else if (input == 3) {
+      moveMotor(10 * STEPS_PER_REV, true, speedDelay);
+    }
+    else if (input == -2) {
+      moveMotor(5 * STEPS_PER_REV, false, speedDelay);
+    }
+    else if (input == -1) {
+      moveMotor(10 * STEPS_PER_REV, false, speedDelay);
+    }
+  }
+}
 
-// ★ speedDelay を追加<br>
-void moveMotor(int steps, bool clockwise, int speedDelay) {<br>
-  digitalWrite(DIR, clockwise ? HIGH : LOW);<br><br>
+// ★ speedDelay を追加
+void moveMotor(int steps, bool clockwise, int speedDelay) {
+  digitalWrite(DIR, clockwise ? HIGH : LOW);
 
-  for (int i = 0; i < steps; i++) {<br>
-    digitalWrite(STEP, HIGH);<br>
-    delayMicroseconds(speedDelay);<br>
-    digitalWrite(STEP, LOW);<br>
-    delayMicroseconds(speedDelay);<br>
-  }<br>
-}<br><br><br>
-<b>2、3は階層を表すボタンと同じ役割で、-1,-2もマイナスが下に行くボタンと同じ役割で設定しています。
-5回転で一階上がる十回転だと二階分上がるという設定です。</b><br><br>
+  for (int i = 0; i < steps; i++) {
+    digitalWrite(STEP, HIGH);
+    delayMicroseconds(speedDelay);
+    digitalWrite(STEP, LOW);
+    delayMicroseconds(speedDelay);
+  }
+}
+<code>
+
 
 <b><p style="font-size: 20px;">実際に動かす</p></b><br>
 <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/2a3LB6v-CWs?si=lQsSJz1rWfDUMUe4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><br>
