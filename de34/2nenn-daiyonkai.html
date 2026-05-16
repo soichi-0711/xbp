@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>そーいちのflask</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>第四回　Flaskでサイト作成</h1>
+    <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
+    <div>
+         <!-- ①↓に文字を書いてみよう -->
+
+<b><p style="font-size: 20px;">明日の天気検索アプリ</p></b><br>
+今回私は明日の天気を検索し、服装は何がいいか、傘は持っていくべきかなどを教えてくれるサイトを作りました<br>
+
+
+<b><p style="font-size: 20px;">アプリを使ってみた</p></b><br>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/BbudIJrEUJI?si=B3lBAv7ZBL2RelU9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><br>
+
+<b><p style="font-size: 20px;">コード</p></b><br>
+
+<b>index</b> <br>
+<img src="./images/スクリーンショット 2026-05-16 144846.png" width="50%" alt="参考画像" ><br><br>
+<b>result</b><br>
+<img src="./images/スクリーンショット 2026-05-16 144911.png" width="50%" alt="参考画像" ><br><br>
+<b>requirement.txt</b><br>
+<img src="./images/スクリーンショット 2026-05-16 145105.png" width="50%" alt="参考画像" ><br><br>
+<b>style.css</b><br>
+<img src="./images/スクリーンショット 2026-05-16 145118.png" width="50%" alt="参考画像" ><br><br>
+
+<img src="./images/スクリーンショット 2026-05-16 145153.png" width="50%" alt="参考画像" ><br><br>
+
+<b>app.py コード</b> <br>
+<pre>
+    from flask import Flask, render_template, request
+from openai import OpenAI
+import os
+
+app = Flask(__name__)
+
+client = OpenAI(
+    api_key="APIキー"
+)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/weather", methods=["POST"])
+def weather():
+
+    city = request.form.get("city")
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "あなたは親切な天気案内アシスタントです。短く分かりやすく答えてください。"
+            },
+            {
+                "role": "user",
+                "content": f"{city}の明日の天気を教えて。天気、気温のイメージ、服装アドバイスも入れて。"
+            }
+        ]
+    )
+
+    result = response.choices[0].message.content
+
+    return render_template(
+        "result.html",
+        city=city,
+        result=result
+    )
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 3000))
+    app.run(host="0.0.0.0", port=port)
+
+
+</code>
+<br><br>
+
+<b><p style="font-size: 20px;">感想</p></b><br>
+今回はFlaskを活用したアプリを製作した。エラーが出たら自分で考えたりしたがわからない部分はgptに聞いて完成させた。AIはマジで便利で素晴らしいと思った一方使いすぎは注意だなと感じました。
