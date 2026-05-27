@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+/* ================================================================
+   以下、Builder で選択したパーツのCSS（自動連結）
+   ================================================================ */
+
+/* ---- フッターブロック（footer3） (footer3) ---- */
+/*フッター
+---------------------------------------------------------------------------*/
+/*フッター全体を囲むブロック*/
+#footer3-parts {
+	text-align: center;	/*テキストを中央に*/
+	font-size: 0.8rem;	/*文字サイズ80%*/
+	display: flex;
+	flex-direction: column;	/*縦積み*/
+	gap: 0.5rem;	/*ブロック同士の間に空けるスペース。0.5文字分。*/
+}
+
+/*フッターメニュー*/
+#footer3-parts ul.menu-parts {
+	list-style: none;
+	margin: 0;padding: 0;
+	display: flex;	/*メニューを横並びに*/
+	gap: 0 1rem;	/*メニュー同士の間に空けるスペース。2文字分。*/
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/*Copyright部分*/
+footer small {
+	display: block;
+	margin-bottom: 1rem;	/*下に1文字分のスペース*/
+}
+
+
+/*SNSアイコン
+---------------------------------------------------------------------------*/
+.sns1-parts {
+	list-style: none;
+	margin: 0;padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;		/*アイコン同士のマージン的な要素。１文字分。*/
+	justify-content: center;
+}
+
+.sns1-parts i {
+	font-size: 30px;	/*アイコンサイズ*/
+}
+
+/* ---- CTAセクション（ui-tools-cta1） (ui-tools-cta1) ---- */
+/*CTA（誘導セクション）
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+.ui-tools-cta1-parts {
+	text-align: center;	/*テキストをセンタリング*/
+	padding: 1rem 0;	/*上下に1文字分、左右はゼロ*/
+}
+
+/*見出し*/
+.ui-tools-cta1-parts h3 {
+	font-size: 1.5rem;	/*文字サイズ1.5倍*/
+	margin-bottom: 0.5rem;	/*下に空けるスペース。0.5文字分。*/
+	line-height: 1.6;	/*行間*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*見出し*/
+	.ui-tools-cta1-parts h3 {
+		font-size: 1.2rem;	/*文字サイズ1.2倍*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*説明テキスト*/
+.ui-tools-cta1-parts p {
+	margin-bottom: 1rem;	/*下に空けるスペース。1文字分。*/
+	font-size: 0.95rem;		/*文字サイズ95%*/
+}
+
+/*ボタン*/
+.ui-tools-cta1-parts .btn-parts {
+	margin-bottom: 0;
+}
+.ui-tools-cta1-parts .btn-parts a {
+	display: inline-block;text-decoration: none;
+	text-align: center;		/*テキストをセンタリング*/
+	padding: 0.8rem 3rem;	/*左右の余白を広めにとる*/
+	border-radius: 3px;		/*角を少しだけ丸くする*/
+	font-size: 1rem;
+	font-weight: bold;	/*太字*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*ボタン*/
+	.ui-tools-cta1-parts .btn-parts a {
+		padding: 0.7rem 2rem;	/*ボタン内の余白。上下に0.7文字分、左右に2文字分。*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*デフォルト背景（白背景時）のボタン色*/
+.ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);	/*背景色。theme.cssのprimary-colorを読み込みます。*/
+	color: var(--primary-inverse-color);	/*文字色。theme.cssのprimary-inverse-colorを読み込みます。*/
+}
+
+/*primary背景上のボタン色（白ボタンに切替）*/
+.bg1-primary-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--primary-color);
+}
+
+/*accent背景上のボタン色（白ボタンに切替）*/
+.bg1-accent-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--accent-color);
+}
+
+/*bg1-parts（inverse）背景上のボタン色（白ボタンに切替）*/
+.bg1-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--bg-inverse-color);
+}
+
+/*light背景上のボタン色（primaryのまま）*/
+.bg1-light-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);
+	color: var(--primary-inverse-color);
+}
+
+/*Font Awesomeアイコンの余白*/
+.ui-tools-cta1-parts .btn-parts a i {
+	margin-right: 0.5em;	/*アイコンとテキストの間に空けるスペース。0.5文字分。*/
+}
+
+/* ---- CTAセクション（ui-tools-cta1） (ui-tools-cta1) ---- */
+/*CTA（誘導セクション）
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+.ui-tools-cta1-parts {
+	text-align: center;	/*テキストをセンタリング*/
+	padding: 1rem 0;	/*上下に1文字分、左右はゼロ*/
+}
+
+/*見出し*/
+.ui-tools-cta1-parts h3 {
+	font-size: 1.5rem;	/*文字サイズ1.5倍*/
+	margin-bottom: 0.5rem;	/*下に空けるスペース。0.5文字分。*/
+	line-height: 1.6;	/*行間*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*見出し*/
+	.ui-tools-cta1-parts h3 {
+		font-size: 1.2rem;	/*文字サイズ1.2倍*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*説明テキスト*/
+.ui-tools-cta1-parts p {
+	margin-bottom: 1rem;	/*下に空けるスペース。1文字分。*/
+	font-size: 0.95rem;		/*文字サイズ95%*/
+}
+
+/*ボタン*/
+.ui-tools-cta1-parts .btn-parts {
+	margin-bottom: 0;
+}
+.ui-tools-cta1-parts .btn-parts a {
+	display: inline-block;text-decoration: none;
+	text-align: center;		/*テキストをセンタリング*/
+	padding: 0.8rem 3rem;	/*左右の余白を広めにとる*/
+	border-radius: 3px;		/*角を少しだけ丸くする*/
+	font-size: 1rem;
+	font-weight: bold;	/*太字*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*ボタン*/
+	.ui-tools-cta1-parts .btn-parts a {
+		padding: 0.7rem 2rem;	/*ボタン内の余白。上下に0.7文字分、左右に2文字分。*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*デフォルト背景（白背景時）のボタン色*/
+.ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);	/*背景色。theme.cssのprimary-colorを読み込みます。*/
+	color: var(--primary-inverse-color);	/*文字色。theme.cssのprimary-inverse-colorを読み込みます。*/
+}
+
+/*primary背景上のボタン色（白ボタンに切替）*/
+.bg1-primary-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--primary-color);
+}
+
+/*accent背景上のボタン色（白ボタンに切替）*/
+.bg1-accent-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--accent-color);
+}
+
+/*bg1-parts（inverse）背景上のボタン色（白ボタンに切替）*/
+.bg1-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--bg-inverse-color);
+}
+
+/*light背景上のボタン色（primaryのまま）*/
+.bg1-light-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);
+	color: var(--primary-inverse-color);
+}
+
+/*Font Awesomeアイコンの余白*/
+.ui-tools-cta1-parts .btn-parts a i {
+	margin-right: 0.5em;	/*アイコンとテキストの間に空けるスペース。0.5文字分。*/
+}
+
+/* ---- CTAセクション（ui-tools-cta1） (ui-tools-cta1) ---- */
+/*CTA（誘導セクション）
+---------------------------------------------------------------------------*/
+/*ボックス全体*/
+.ui-tools-cta1-parts {
+	text-align: center;	/*テキストをセンタリング*/
+	padding: 1rem 0;	/*上下に1文字分、左右はゼロ*/
+}
+
+/*見出し*/
+.ui-tools-cta1-parts h3 {
+	font-size: 1.5rem;	/*文字サイズ1.5倍*/
+	margin-bottom: 0.5rem;	/*下に空けるスペース。0.5文字分。*/
+	line-height: 1.6;	/*行間*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*見出し*/
+	.ui-tools-cta1-parts h3 {
+		font-size: 1.2rem;	/*文字サイズ1.2倍*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*説明テキスト*/
+.ui-tools-cta1-parts p {
+	margin-bottom: 1rem;	/*下に空けるスペース。1文字分。*/
+	font-size: 0.95rem;		/*文字サイズ95%*/
+}
+
+/*ボタン*/
+.ui-tools-cta1-parts .btn-parts {
+	margin-bottom: 0;
+}
+.ui-tools-cta1-parts .btn-parts a {
+	display: inline-block;text-decoration: none;
+	text-align: center;		/*テキストをセンタリング*/
+	padding: 0.8rem 3rem;	/*左右の余白を広めにとる*/
+	border-radius: 3px;		/*角を少しだけ丸くする*/
+	font-size: 1rem;
+	font-weight: bold;	/*太字*/
+}
+
+	/*画面幅500px以下の追加指定*/
+	@media (max-width:500px) {
+
+	/*ボタン*/
+	.ui-tools-cta1-parts .btn-parts a {
+		padding: 0.7rem 2rem;	/*ボタン内の余白。上下に0.7文字分、左右に2文字分。*/
+	}
+
+	}/*追加指定ここまで*/
+
+
+/*デフォルト背景（白背景時）のボタン色*/
+.ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);	/*背景色。theme.cssのprimary-colorを読み込みます。*/
+	color: var(--primary-inverse-color);	/*文字色。theme.cssのprimary-inverse-colorを読み込みます。*/
+}
+
+/*primary背景上のボタン色（白ボタンに切替）*/
+.bg1-primary-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--primary-color);
+}
+
+/*accent背景上のボタン色（白ボタンに切替）*/
+.bg1-accent-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--accent-color);
+}
+
+/*bg1-parts（inverse）背景上のボタン色（白ボタンに切替）*/
+.bg1-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--bg-color);
+	color: var(--bg-inverse-color);
+}
+
+/*light背景上のボタン色（primaryのまま）*/
+.bg1-light-parts .ui-tools-cta1-parts .btn-parts a {
+	background: var(--primary-color);
+	color: var(--primary-inverse-color);
+}
+
+/*Font Awesomeアイコンの余白*/
+.ui-tools-cta1-parts .btn-parts a i {
+	margin-right: 0.5em;	/*アイコンとテキストの間に空けるスペース。0.5文字分。*/
+}
